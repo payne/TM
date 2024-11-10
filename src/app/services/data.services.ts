@@ -19,6 +19,9 @@ export class DataService {
   private loadData() {
     this.http.get<Member[]>('https://payne.github.io/TMtoday1/tm.json').subscribe(data => {
       this.members = data;
+      console.log(`just loaded ${this.members.length} members`);
+      console.log(`first member is ${this.members[0]['First Name']} ${this.members[0]['Last Name']}`);
+      console.log(data);
       // Set initial date to first available date
       const dates = this.getAvailableDates();
       if (dates.length > 0) {
