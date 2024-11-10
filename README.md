@@ -1,5 +1,8 @@
 # TM
 
+Relates to https://github.com/payne/TMtoday1
+and https://github.com/payne/TMtoday1
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
 
 ## Development server
