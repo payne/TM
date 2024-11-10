@@ -31,7 +31,7 @@ import { Member } from '../../models/member.model';
               </mat-card-title>
             </mat-card-header>
             <mat-card-content class="role-content">
-              Role: {{ role.role || 'No role assigned' }}
+              Role: {{ fullRoleName(role.role) }}
             </mat-card-content>
           </mat-card>
         }
@@ -112,5 +112,10 @@ export class UpcomingRolesComponent implements OnInit {
 
   goBack() {
     this.router.navigate(['/home']);
+  }
+
+  fullRoleName(role: string) {
+    if (!role) return 'No role assigned';
+    return this.dataService.fullRoleName(role);
   }
 }

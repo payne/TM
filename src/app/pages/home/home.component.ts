@@ -70,21 +70,7 @@ export class HomeComponent {
     ]);
   }
 
-  roleMap= new Map([
-      ['E', 'Evaluator'],
-      ['S', 'Speaker'],
-      ['TM', 'Toastmaster'],
-      ['CE', 'Chief Evaluator'],
-      ['TT', 'Table Topics Master'],
-      ['GR', 'Grammarian'],
-      ['GT', 'Grunt Tabulator'],
-      ['T', 'Timer'],
-      ['BC', 'Ballot Counter'],
-      ['J', 'Jokemaster'],
-      ['PO', 'Presiding Officer'],
-    ]);
-
-  fullRoleName(shortRole: string): string | undefined {
-    return this.roleMap.get(shortRole);
+  fullRoleName(memberElement: string) {
+    return this.dataService.fullRoleName(memberElement);
   }
 }
