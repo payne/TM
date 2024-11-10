@@ -11,13 +11,13 @@ import { Member } from '../models/member.model';
 export class DataService {
   private members: Member[] = [];
   private selectedDate = new BehaviorSubject<string>('');
-  
+
   constructor(private http: HttpClient) {
     this.loadData();
   }
 
   private loadData() {
-    this.http.get<Member[]>('/api/members').subscribe(data => {
+    this.http.get<Member[]>('https://payne.github.io/TMtoday1/tm.json').subscribe(data => {
       this.members = data;
       // Set initial date to first available date
       const dates = this.getAvailableDates();
@@ -50,7 +50,7 @@ export class DataService {
   }
 
   getSpeakersAndEvaluators(date: string): Member[] {
-    return this.members.filter(member => 
+    return this.members.filter(member =>
       ['S', 'E'].includes(member[date]?.trim())
     );
   }

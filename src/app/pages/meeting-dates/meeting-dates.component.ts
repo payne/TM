@@ -3,7 +3,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
-import { DataService } from '../../services/data.service';
+import { DataService } from '../../services/data.services';
 
 @Component({
   selector: 'app-meeting-dates',

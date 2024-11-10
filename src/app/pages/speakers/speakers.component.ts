@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { DataService } from '../../services/data.service';
+import { DataService } from '../../services/data.services';
 import { Member } from '../../models/member.model';
 
 @Component({
