@@ -1,4 +1,6 @@
 
+
+
 // pages/upcoming-roles/upcoming-roles.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -37,6 +39,8 @@ import { Member } from '../../models/member.model';
     </div>
   `,
   styles: [`
+    @import '../../styles/card.styles.scss';
+
     .container {
       padding: 1rem;
       max-width: 800px;
@@ -63,20 +67,6 @@ import { Member } from '../../models/member.model';
 
     .role-card {
       margin-bottom: 1rem;
-    }
-
-    :host ::ng-deep {
-      .role-card {
-        .date-title {
-          font-size: 1.6rem !important;
-          line-height: 1.3 !important;
-        }
-
-        .role-content {
-          font-size: 1.3rem !important;
-          padding: 1rem;
-        }
-      }
     }
   `]
 })

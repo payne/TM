@@ -28,6 +28,8 @@ import { Member } from '../../models/member.model';
     </div>
   `,
   styles: [`
+    @import '../../styles/card.styles.scss';
+
     .page-heading {
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
@@ -39,29 +41,9 @@ import { Member } from '../../models/member.model';
       gap: 16px;
       padding: 16px;
     }
-
-    .speaker-card {
-      .member-name {
-        font-size: 1.3em !important;
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    :host ::ng-deep {
-      .speaker-card {
-        mat-card-title {
-          font-size: 1.6rem !important;
-          line-height: 1.3 !important;
-        }
-
-        .role-content {
-          font-size: 1.3rem !important;
-          padding: 1rem;
-        }
-      }
-    }
   `]
 })
+
 export class SpeakersComponent {
   selectedDate = '';
   speakersAndEvaluators: Member[] = [];

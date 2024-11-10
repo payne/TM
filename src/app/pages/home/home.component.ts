@@ -1,5 +1,4 @@
-
-// pages/home/home.component.ts - Update just the template and imports
+// pages/home/home.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -33,7 +32,21 @@ import { Member } from '../../models/member.model';
       }
     </div>
   `,
-  styles: [/* ... existing styles ... */]
+  styles: [`
+    @import '../../styles/card-styles.scss';
+
+    .page-heading {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+  `]
 })
 export class HomeComponent {
   selectedDate = '';
