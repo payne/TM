@@ -26,7 +26,7 @@ import { Member } from '../../models/member.model';
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="role-content">
-            Role: {{ member[selectedDate] }}
+            Role: {{ fullRoleName(member[selectedDate]) }}
           </mat-card-content>
         </mat-card>
       }
@@ -68,5 +68,23 @@ export class HomeComponent {
       encodeURIComponent(member['First Name']),
       encodeURIComponent(member['Last Name'])
     ]);
+  }
+
+  roleMap= new Map([
+      ['E', 'Evaluator'],
+      ['S', 'Speaker'],
+      ['TM', 'Toastmaster'],
+      ['CE', 'Chief Evaluator'],
+      ['TT', 'Table Topics Master'],
+      ['GR', 'Grammarian'],
+      ['GT', 'Grunt Tabulator'],
+      ['T', 'Timer'],
+      ['BC', 'Ballot Counter'],
+      ['J', 'Jokemaster'],
+      ['PO', 'Presiding Officer'],
+    ]);
+
+  fullRoleName(shortRole: string): string | undefined {
+    return this.roleMap.get(shortRole);
   }
 }

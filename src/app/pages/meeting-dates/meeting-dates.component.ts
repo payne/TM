@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { DataService} from '../../services/data.services';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-meeting-dates',
@@ -78,7 +79,7 @@ export class MeetingDatesComponent {
   availableDates: string[] = [];
   selectedDate = '';
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     this.availableDates = this.dataService.getAvailableDates();
     this.dataService.getSelectedDate().subscribe(date => {
       this.selectedDate = date;
@@ -87,5 +88,6 @@ export class MeetingDatesComponent {
 
   selectDate(date: string) {
     this.dataService.setSelectedDate(date);
+    this.router.navigate(['home']);
   }
 }
