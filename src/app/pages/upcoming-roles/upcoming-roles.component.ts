@@ -24,7 +24,9 @@ import { Member } from '../../models/member.model';
 
       <div class="roles-list">
         @for (role of upcomingRoles; track role.date) {
-          <mat-card class="role-card">
+          <mat-card class="role-card"
+                    (click)="showScheduleForDate(role.date)"
+            >
             <mat-card-header>
               <mat-card-title class="date-title">
                 {{ role.date }}
@@ -117,5 +119,10 @@ export class UpcomingRolesComponent implements OnInit {
   fullRoleName(role: string) {
     if (!role) return 'No role assigned';
     return this.dataService.fullRoleName(role);
+  }
+
+  showScheduleForDate(date: string) {
+    this.dataService.setSelectedDate(date);
+    this.router.navigate(['/home']);
   }
 }
